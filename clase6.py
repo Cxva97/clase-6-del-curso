@@ -57,8 +57,62 @@ print(persona2)
 del persona2["sueldo"]
 print(persona2)
 
-
+##########################################################################################
+persona2 = {
+    "nombre": "cesar",
+    "apellido ": "Villacis",
+    "edad" : 28
+}
 #iterar es trabajar con cada elemento de una variable estructurada
 
-for valor in persona2:
+for valor in persona2: #por defecto tomas las llaves
     print(valor)
+
+for valor in persona2.values(): #iterar valores de un diccionario
+    print(valor)
+
+for valor in persona2.keys(): #iterar keys de un diccionario
+    print(valor)
+
+for keys, values in persona2.items(): #itera a la vez key, values
+    print(keys,values)
+
+##################################################
+#unir o variables mixtas
+personas = [{
+        "nombre": "cesar",
+        "apellido": "Villacis"
+    },
+    {
+        "nombre": "Xavier",
+        "apellido": "Alvia"
+    },
+    {
+        "nombre": "Gabriela",
+        "apellido": "Arteaga"
+    }
+]
+
+#este es el usuario 1 nombre apellido
+# este es el usuario 2 nombre apellido
+
+for persona in personas :
+    print("El usuario", persona["nombre"], persona["apellido"])
+
+
+usuario = {
+    "nombre": "Cesar",
+    "Apellido": "Villacis",
+    "hobbie" : ["futbol","videojuegos","musica"],
+    "titulos" : ["ingeniero de software","gamer"]
+}
+
+for llave, valor in usuario.items() :
+    if llave == "hobbie" :
+        for hobbie in valor :
+            print(hobbie)
+    elif llave == "titulos" :
+        for titulo in valor :
+            print(titulo)
+    else:
+        print(llave,valor)

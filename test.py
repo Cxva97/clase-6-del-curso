@@ -1,18 +1,22 @@
-persona2 = {
-    "nombre": "cesar",
-    "apellido ": "Villacis",
-    "edad" : 28
+
+"""
+teniando la lista de diccionarios:
+pida al usuario el ingrese de un codigo y borre de la lista dicho elemento.
+"""
+productos=[{
+"id":1,
+"nombre":"lapiz"
+},{
+"id":2,
+"nombre":"cuadernos"
 }
-#iterar es trabajar con cada elemento de una variable estructurada
+]
 
-for valor in persona2: #por defecto tomas las llaves
-    print(valor)
+print(productos)
 
-for valor in persona2.values(): #iterar valores de un diccionario
-    print(valor)
-
-for valor in persona2.keys(): #iterar keys de un diccionario
-    print(valor)
-
-for keys, values in persona2.items(): #itera a la vez key, values
-    print(keys,values)
+id = int(input("ingrese el id a eliminar: "))
+for elemento in productos:
+    if elemento["id"] == id:
+        productos.remove(elemento)
+        print("Elemento eliminado")
+print(productos)
